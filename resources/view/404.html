@@ -5,7 +5,7 @@
     <meta name="title" content="404 Not found"/>
     <meta name="Description" content="404 Not found"/>
 
-    <title>Application Error</title>
+    <title th:text="#{errorPage.notFound}"></title>
     <link rel="apple-touch-icon" sizes="180x180" href="/static/images/icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/images/icon/favicon-32x32.png">
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css"/>
@@ -36,7 +36,7 @@
                         </ul>
 
                         <div>
-                            <a href="/ui/profile" type="button" class="btn btn-orange"><i class="fa-solid fa-address-card"></i> Profile</a>
+                            <a th:text="#{errorPage.profile}" href="/ui/profile" type="button" class="btn btn-orange"><i class="fa-solid fa-address-card"></i> Profile</a>
                         </div>
                     </div>
                 </div>
@@ -84,8 +84,8 @@
             <appMain>
                 <div class="text-center">
                     <br>
-                    <h3 class="my-5">404 NOT_FOUND</h3>
-                    <h1 class="my-3">No page here</h1>
+                    <h3 th:text="#{errorPage.notFound}" class="my-5">404 NOT_FOUND</h3>
+                    <h1 th:text="#{errorPage.noPageHere}" class="my-3">No page here</h1>
                 </div>
             </appMain>
         </div>

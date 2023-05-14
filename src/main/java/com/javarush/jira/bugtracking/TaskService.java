@@ -24,4 +24,8 @@ public class TaskService extends BugtrackingService<Task, TaskTo, TaskRepository
         task.getTags().addAll(tags);
         repository.save(task);
     }
+
+    public void subscribeUserToTask(Long taskId, Long userId) {
+
+    }
 }
