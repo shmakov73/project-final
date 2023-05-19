@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithUserDetails;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.transaction.annotation.Propagation;
@@ -18,7 +17,18 @@ import static com.javarush.jira.common.util.JsonUtil.writeValue;
 import static com.javarush.jira.login.internal.UniqueMailValidator.EXCEPTION_DUPLICATE_EMAIL;
 import static com.javarush.jira.login.internal.config.SecurityConfig.PASSWORD_ENCODER;
 import static com.javarush.jira.login.internal.web.AdminUserController.REST_URL;
-import static com.javarush.jira.login.internal.web.UserTestData.*;
+import static com.javarush.jira.login.internal.web.UserTestData.ADMIN_ID;
+import static com.javarush.jira.login.internal.web.UserTestData.ADMIN_MAIL;
+import static com.javarush.jira.login.internal.web.UserTestData.NOT_FOUND;
+import static com.javarush.jira.login.internal.web.UserTestData.USER_ID;
+import static com.javarush.jira.login.internal.web.UserTestData.USER_MAIL;
+import static com.javarush.jira.login.internal.web.UserTestData.USER_MATCHER;
+import static com.javarush.jira.login.internal.web.UserTestData.admin;
+import static com.javarush.jira.login.internal.web.UserTestData.getNew;
+import static com.javarush.jira.login.internal.web.UserTestData.getUpdated;
+import static com.javarush.jira.login.internal.web.UserTestData.guest;
+import static com.javarush.jira.login.internal.web.UserTestData.jsonWithPassword;
+import static com.javarush.jira.login.internal.web.UserTestData.user;
 import static org.hamcrest.Matchers.containsString;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -26,7 +36,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 class AdminUserControllerTest extends AbstractControllerTest {
 
     private static final String REST_URL_SLASH = REST_URL + '/';

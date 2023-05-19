@@ -1,4 +1,3 @@
---liquibase formatted sql
 
 --changeset kmpk:init_schema
 DROP TABLE IF EXISTS USER_ROLE;
@@ -249,7 +248,7 @@ values (1, 'skype', 'userSkype'),
        (1, 'website', 'user.com'),
        (2, 'github', 'adminGitHub'),
        (2, 'tg', 'adminTg'),
-       (2, 'vk', 'adminVk');
+       (2, 'mobile', '+01234567890');
 
 --changeset kriffer:add_dashboard
 
