@@ -30,13 +30,13 @@ public class DashboardUIController {
         return "index";
     }
 
-    @PostMapping("/tasks/{id}/tags")
+    @GetMapping("/tasks/{id}/tags")
     public String addTag(@PathVariable("id") Long id, @RequestBody Set<String> tags){
         taskService.addTaskTags(id, tags);
         return "redirect:/";
     }
 
-    @PostMapping()
+    @GetMapping("/tasks/{id}/users/{userId}")
     public String subscribeUserToTask(@PathVariable("id") Long taskId, @PathVariable("userId") Long userId){
         taskService.subscribeUserToTask(taskId, userId);
         return "redirect:/";
