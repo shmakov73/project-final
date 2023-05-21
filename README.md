@@ -31,4 +31,5 @@
 7. Add the ability to subscribe to tasks that are not assigned to the current user.
 8. Write a Dockerfile for the main server.
 9. Write a docker-compose file to run the server container along with the database and nginx. For nginx, use the config/nginx.conf config file.
+10. Add localization in at least two languages ​​for email templates and index.html start page.
 ...
