@@ -16,12 +16,12 @@
                         </li>
                     </ul>
                     <div th:if="${authUser} == null">
-                        <a href="/view/login" type="button" class="btn btn-orange">Login/Register</a>
+                        <a th:text="#{header.login}" href="/view/login" type="button" class="btn btn-orange">Login/Register</a>
                     </div>
                     <th:block th:if="${authUser} != null">
-                        <a href="/ui/profile" type="button" class="btn btn-orange"><i class="fa-solid fa-address-card"></i> Profile</a>
+                        <a th:text="#{header.profile}" href="/ui/profile" type="button" class="btn btn-orange"><i class="fa-solid fa-address-card"></i> Profile</a>
                         <form action="/ui/logout" method="post" class="mx-2">
-                            <button class="btn btn-yellow btn-orange" type="submit"><i class="fa-solid fa-sign-out"></i> Logout</button>
+                            <button th:text="#{header.logout}" class="btn btn-yellow btn-orange" type="submit"><i class="fa-solid fa-sign-out"></i> Logout</button>
                         </form>
                     </th:block>
                 </div>
